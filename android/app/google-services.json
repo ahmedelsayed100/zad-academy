@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "588646995798",
+    "project_id": "zad-academy-c6258",
+    "storage_bucket": "zad-academy-c6258.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588646995798:android:01fa94c140ff834215a8f7",
+        "android_client_info": {
+          "package_name": "com.tech.zad_academy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588646995798-v47p9o3bf3t7bchcehnu0og34njtafeo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAap8NJemx2sdVtHEQDvJ5VcTvX2Y8wtto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588646995798-v47p9o3bf3t7bchcehnu0og34njtafeo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
