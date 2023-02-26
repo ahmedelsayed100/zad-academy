@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'repeated_data.dart';
+import '../constant_values.dart';
 
 // import 'package:awesome_notifications/awesome_notifications.dart';
 popularAppBar({title}) {
@@ -12,7 +12,7 @@ popularAppBar({title}) {
       statusBarBrightness: Brightness.light,
     ),
     title: Text(title),
-    elevation: 2,
+    elevation: 1,
   );
 }
 
@@ -90,23 +90,38 @@ class ErrorImage extends StatelessWidget {
   }
 }
 
-ElevatedButton buildCustomElevatedButton({context, label, fun, color}) {
-  return ElevatedButton(
-    onPressed: fun,
-    style: ElevatedButton.styleFrom(
-      elevation: 5,
-      backgroundColor: Colors.orangeAccent,
-      padding: EdgeInsets.symmetric(
-        vertical: returnHeight(context) * 0.01,
-        horizontal: returnWidth(context) * 0.17,
+class CustomElevatedButton extends StatelessWidget {
+  final String label;
+  final Color color;
+  final Function function;
+
+  const CustomElevatedButton(
+      {Key? key,
+      required this.label,
+      required this.color,
+      required this.function})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () => function,
+      style: ElevatedButton.styleFrom(
+        elevation: 5,
+        backgroundColor: color,
+        padding: EdgeInsets.symmetric(
+          vertical: returnHeight(context) * 0.02,
+          horizontal: returnWidth(context) * 0.17,
+        ),
       ),
-    ),
-    child: AutoSizeText(
-      "$label",
-      style: const TextStyle(color: Colors.white),
-      presetFontSizes: const [22, 21, 20],
-    ),
-  );
+      child: AutoSizeText(
+        label,
+        style: const TextStyle(color: Colors.white),
+        presetFontSizes: const [22, 21, 20],
+      ),
+    );
+    ;
+  }
 }
 
 Widget soundControlIconButton({icon, url, func, color}) {
@@ -137,7 +152,7 @@ Widget listTileItem({title, icon, func}) {
     trailing: Icon(
       icon,
       size: 28,
-      color: ConstantValues.blackColor,
+      color: ConstantValues.bkColor,
     ),
     onTap: func,
   );

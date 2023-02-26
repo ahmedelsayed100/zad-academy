@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'repeated_data.dart';
+import '../constant_values.dart';
 
 const selectedFontFamily = "Lateef";
 
@@ -12,7 +12,7 @@ final appTheme = ThemeData(
     elevation: 2,
     titleTextStyle: TextStyle(
       fontFamily: selectedFontFamily,
-      color: ConstantValues.blackColor,
+      color: ConstantValues.bkColor,
       fontWeight: FontWeight.w500,
       fontSize: 25,
     ),

@@ -1,136 +1,136 @@
 import 'package:flutter/material.dart';
+import 'package:zad_academy/models/audio_model.dart';
 
-class AudioViewModel {
-  final textStyle = const TextStyle(
-    color: Colors.white,
-    fontSize: 21,
-    fontWeight: FontWeight.w500,
-  );
+const textStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 21,
+  fontWeight: FontWeight.w500,
+);
 
-  List buttonsLabels = ["", "", ""];
-  List allLevelsAudiosUrl = [
-    //sem 1
-    [
-      //1-24
-      "https://archive.org/download/zad-acdmy-L1/tfsr-l1-mohd-mnjd-",
-      //1-22
-      "https://archive.org/download/zad-acdmy-L1/aqeda-l1-abo-zyd-qbi-",
-      //0-36
-      "https://archive.org/download/zad-acdmy-L1/fiqh-l1-mnsor-ghamdi-",
-      //1-24
-      "https://archive.org/download/zad-acdmy-L1/arbc-l1-nasr-jhni-",
-      //0-24
-      "https://archive.org/download/zad-acdmy-L1/trbia-l1-3bdel-3ziz-jhni-",
-      //0-24
-      "https://archive.org/download/zad-acdmy-L1/sera-l1-m3asm-7kim-",
-      //0-24
-      "https://archive.org/download/zad-acdmy-L1/hadeth-l1-mwfq-ghmdi-",
-    ],
-    //sem 2
-    [
-      // 1-24 except tafseer 1-36
-      "https://archive.org/download/zad-acdmy-L2/Tafsir-S2-",
-      "https://archive.org/download/zad-acdmy-L2/Aqeda-S2-",
-      "https://archive.org/download/zad-acdmy-L2/Fiqh-S2-",
-      "https://archive.org/download/zad-acdmy-L2/Arbc-S2-",
-      "https://archive.org/download/zad-acdmy-L2/Trbyh-S2-",
-      "https://archive.org/download/zad-acdmy-L2/Serah-S2-",
-      "https://archive.org/download/zad-acdmy-L2/Hadith-S2-",
-    ],
-    //sem 3
-    [
-      "https://archive.org/download/tafsser-s-3-24/Tafsser-s3-",
-      "https://archive.org/download/aqeedah-s-3-03/Aqeedah-S3-",
-      "https://archive.org/download/fiqh-s3-10/fiqh-s3-",
-      "https://archive.org/download/arabic-s-3-04/Arabic-S3-",
-      "https://archive.org/download/tarbiah-s3-22/tarbiah-s3-",
-      "https://archive.org/download/seerah-s-3-11/Seerah-S3-",
-      "https://archive.org/download/hadith-s3-11/hadith-s3-",
-    ],
-    //sem 4
-    [
-      "https://archive.org/download/tafseer-s-4-17/Tafseer-S4-",
-      "https://archive.org/download/aqeedah-s-4-18/Aqeedah-S4-",
-      "https://archive.org/download/fiqh-s4-16/fiqh-s4-",
-      "https://archive.org/download/arabic-s-4-08/Arabic-S4-",
-      "https://archive.org/download/tarbiah-s4-24/tarbiah-s4-",
-      "https://archive.org/download/seerah-s-4-23/Seerah-S4-",
-      "https://archive.org/download/hadith-s-4-14/Hadith-S4-",
-    ],
-  ];
-  // "https://archive.org/download/hadith-s-4-14/Hadith-S4-01.m4a",
-
-  checkCategIndex(value) {
-    switch (value) {
-      case "التفسير":
-        return 0;
-      case "العقيدة":
-        return 1;
-
-      case "الفقه":
-        return 2;
-
-      case "اللغة العربية":
-        return 3;
-
-      case "التربية الإسلامية":
-        return 4;
-
-      case "السيرة النبوية":
-        return 5;
-
-      case "الحديث":
-        return 6;
-    }
-  }
-
-  checkLevelIndex(value) {
-    switch (value) {
-      case "المستوي الأول":
-        return 0;
-
-      case "المستوي الثاني":
-        return 1;
-
-      case "المستوي الثالث":
-        return 2;
-
-      case "المستوي الرابع":
-        return 3;
-    }
-  }
-
-  int getlengthOfSubjectList(value) {
-    int x = 0, y = 24;
-    switch (value) {
-      case "التفسير":
-        x = y;
-        break;
-      case "العقيدة":
-        x = y;
-        break;
-      case "الفقه":
-        x = 37;
-        break;
-      case "اللغة العربية":
-        x = y;
-        break;
-
-      case "التربية الإسلامية":
-        x = y;
-        break;
-
-      case "السيرة النبوية":
-        x = y;
-        break;
-
-      case "الحديث":
-        x = y;
-        break;
-    }
-    return x;
-  }
-}
+final List<List<AudioModel>> audios = [
+  [
+    AudioModel(
+      audioName: "التفسير",
+      audioUrl: [
+        "https://archive.org/download/zad-acdmy-L1/tfsr-l1-mohd-mnjd-",
+        "https://archive.org/download/zad-acdmy-L2/Tafsir-S2-",
+        "https://archive.org/download/tafsser-s-3-24/Tafsser-s3-",
+        "https://archive.org/download/tafseer-s-4-17/Tafseer-S4-",
+      ],
+      audioListLength: [24, 36, 24, 24],
+    ),
+    AudioModel(
+      audioName: "العقيدة",
+      audioUrl: [
+        "https://archive.org/download/zad-acdmy-L1/aqeda-l1-abo-zyd-qbi-",
+        "https://archive.org/download/zad-acdmy-L2/Aqeda-S2-",
+        "https://archive.org/download/aqeedah-s-3-03/Aqeedah-S3-",
+        "https://archive.org/download/aqeedah-s-4-18/Aqeedah-S4-",
+      ],
+      audioListLength: [22, 24, 24, 24],
+    ),
+    AudioModel(
+      audioName: "الفقه",
+      audioUrl: [
+        "https://archive.org/download/zad-acdmy-L1/fiqh-l1-mnsor-ghamdi-",
+        "https://archive.org/download/zad-acdmy-L2/Fiqh-S2-",
+        "https://archive.org/download/fiqh-s3-10/fiqh-s3-",
+        "https://archive.org/download/fiqh-s4-16/fiqh-s4-",
+      ],
+      audioListLength: [37, 24, 24, 24],
+    ),
+    AudioModel(
+      audioName: "اللغة العربية",
+      audioUrl: [
+        "https://archive.org/download/zad-acdmy-L1/arbc-l1-nasr-jhni-",
+        "https://archive.org/download/zad-acdmy-L2/Arbc-S2-",
+        "https://archive.org/download/arabic-s-3-04/Arabic-S3-",
+        "https://archive.org/download/arabic-s-4-08/Arabic-S4-",
+      ],
+      audioListLength: [25, 24, 24, 24],
+    ),
+    AudioModel(
+      audioName: "التربية اﻹسلامية",
+      audioUrl: [
+        "https://archive.org/download/zad-acdmy-L1/trbia-l1-3bdel-3ziz-jhni-",
+        "https://archive.org/download/zad-acdmy-L2/Trbyh-S2-",
+        "https://archive.org/download/tarbiah-s3-22/tarbiah-s3-",
+        "https://archive.org/download/tarbiah-s4-24/tarbiah-s4-",
+      ],
+      audioListLength: [25, 24, 24, 24],
+    ),
+    AudioModel(
+      audioName: "السيرة النبوية",
+      audioUrl: [
+        "https://archive.org/download/zad-acdmy-L1/sera-l1-m3asm-7kim-",
+        "https://archive.org/download/zad-acdmy-L2/Serah-S2-",
+        "https://archive.org/download/seerah-s-3-11/Seerah-S3-",
+        "https://archive.org/download/seerah-s-4-23/Seerah-S4-",
+      ],
+      audioListLength: [25, 24, 24, 24],
+    ),
+    AudioModel(
+      audioName: "الحديث",
+      audioUrl: [
+        "https://archive.org/download/zad-acdmy-L1/hadeth-l1-mwfq-ghmdi-",
+        "https://archive.org/download/zad-acdmy-L2/Hadith-S2-",
+        "https://archive.org/download/hadith-s3-11/hadith-s3-",
+        "https://archive.org/download/hadith-s-4-14/Hadith-S4-",
+      ],
+      audioListLength: [25, 24, 24, 24],
+    ),
+  ],
+];
+List allLevelsAudiosUrl = [
+  //sem 1
+  [
+    //1-24
+    "https://archive.org/download/zad-acdmy-L1/tfsr-l1-mohd-mnjd-",
+    //1-22
+    "https://archive.org/download/zad-acdmy-L1/aqeda-l1-abo-zyd-qbi-",
+    //0-36
+    "https://archive.org/download/zad-acdmy-L1/fiqh-l1-mnsor-ghamdi-",
+    //1-24
+    "https://archive.org/download/zad-acdmy-L1/arbc-l1-nasr-jhni-",
+    //0-24
+    "https://archive.org/download/zad-acdmy-L1/trbia-l1-3bdel-3ziz-jhni-",
+    //0-24
+    "https://archive.org/download/zad-acdmy-L1/sera-l1-m3asm-7kim-",
+    //0-24
+    "https://archive.org/download/zad-acdmy-L1/hadeth-l1-mwfq-ghmdi-",
+  ],
+  //sem 2
+  [
+    // 1-24 except tafseer 1-36
+    "https://archive.org/download/zad-acdmy-L2/Tafsir-S2-",
+    "https://archive.org/download/zad-acdmy-L2/Aqeda-S2-",
+    "https://archive.org/download/zad-acdmy-L2/Fiqh-S2-",
+    "https://archive.org/download/zad-acdmy-L2/Arbc-S2-",
+    "https://archive.org/download/zad-acdmy-L2/Trbyh-S2-",
+    // "https://archive.org/download/zad-acdmy-L2/Serah-S2-",
+    // "https://archive.org/download/zad-acdmy-L2/Hadith-S2-",
+  ],
+  //sem 3
+  [
+    "https://archive.org/download/tafsser-s-3-24/Tafsser-s3-",
+    "https://archive.org/download/aqeedah-s-3-03/Aqeedah-S3-",
+    "https://archive.org/download/fiqh-s3-10/fiqh-s3-",
+    "https://archive.org/download/arabic-s-3-04/Arabic-S3-",
+    "https://archive.org/download/tarbiah-s3-22/tarbiah-s3-",
+    "https://archive.org/download/seerah-s-3-11/Seerah-S3-",
+    "https://archive.org/download/hadith-s3-11/hadith-s3-",
+  ],
+  //sem 4
+  [
+    "https://archive.org/download/tafseer-s-4-17/Tafseer-S4-",
+    "https://archive.org/download/aqeedah-s-4-18/Aqeedah-S4-",
+    "https://archive.org/download/fiqh-s4-16/fiqh-s4-",
+    "https://archive.org/download/arabic-s-4-08/Arabic-S4-",
+    "https://archive.org/download/tarbiah-s4-24/tarbiah-s4-",
+    "https://archive.org/download/seerah-s-4-23/Seerah-S4-",
+    "https://archive.org/download/hadith-s-4-14/Hadith-S4-",
+  ],
+];
 
 // import 'package:audioplayers/audioplayers.dart';
 // import 'package:flutter/material.dart';
