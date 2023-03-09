@@ -1,6 +1,6 @@
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-const int maxFailedLoadAttempts = 3;
+const int maxFailedLoadAttempts = 2;
 
 class InterstitialAdMobView {
   final String adId = "ca-app-pub-4983333190473466/3317915362";

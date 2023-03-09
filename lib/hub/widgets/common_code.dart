@@ -120,7 +120,6 @@ class CustomElevatedButton extends StatelessWidget {
         presetFontSizes: const [22, 21, 20],
       ),
     );
-    ;
   }
 }
 

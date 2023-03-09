@@ -33,7 +33,7 @@ class _BookViewState extends State<BookView> {
                     Card(
                       elevation: 6,
                       child: Image.asset(
-                       myProvider.getSubjectData().bookImageUrl,
+                        myProvider.getSubjectData().bookImageUrl,
                         fit: BoxFit.cover,
                         height: orientation == Orientation.landscape
                             ? returnHeight(context) * 0.5

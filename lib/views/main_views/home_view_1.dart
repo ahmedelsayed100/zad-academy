@@ -46,8 +46,10 @@ class HomePageView extends StatelessWidget {
                                 flex: 4,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(returnWidth(context) * 0.02),
-                                    bottomLeft: Radius.circular(returnWidth(context) * 0.02),
+                                    topLeft: Radius.circular(
+                                        returnWidth(context) * 0.02),
+                                    bottomLeft: Radius.circular(
+                                        returnWidth(context) * 0.02),
                                   ),
                                   child: Image.asset(
                                     level.levelImageUrl,

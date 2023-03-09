@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../views/content_views/audio/audio_player_view.dart';
 import '../../views/content_views/audio/audio_view.dart';
 import '../../views/content_views/book/book_view.dart';
 import '../../views/content_views/video/videos_view.dart';

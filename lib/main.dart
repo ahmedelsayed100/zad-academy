@@ -7,7 +7,7 @@ import 'hub/widgets/app_theme.dart';
 import 'views/main_views/home_view_1.dart';
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 // return MultiProvider(
 // providers: [

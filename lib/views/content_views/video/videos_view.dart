@@ -27,7 +27,6 @@ class _VideoViewState extends State<VideoView> {
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
     final myProvider = Provider.of<LevelProvider>(context);
-    print(myProvider.getMaterialData().materialId);
     return SafeArea(
       top: orientation == Orientation.portrait ? false : true,
       child: StreamBuilder<ConnectivityResult>(

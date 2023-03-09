@@ -23,7 +23,7 @@ class _AboutAppViewState extends State<AboutAppView> {
       top: true,
       child: Scaffold(
         appBar: popularAppBar(title: aboutAppView.title),
-        backgroundColor:ConstantValues.whColor,
+        backgroundColor: ConstantValues.whColor,
         body: ListView(
           padding: EdgeInsets.all(returnHeight(context) * 0.012),
           children: [

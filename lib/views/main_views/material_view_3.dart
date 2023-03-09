@@ -81,7 +81,6 @@ class _MaterialViewState extends State<MaterialView> {
                     ),
                     onTap: () {
                       interAd.showAd();
-                      print(material.materialId);
                       subjectData.getMaterialIndex(material.materialId);
                       Navigator.of(context).pushNamed(
                         material.materialDestination,
